@@ -1,0 +1,40 @@
+.nav {
+  background-color: var(--background);
+  height: 70px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7rem;
+  border-bottom: 0.5px solid #eae1e1;
+
+  & .logo {
+    font-size: var(--font-size-lg);
+    font-family: Kablammo;
+    cursor: pointer;
+  }
+
+  & ul {
+    display: flex;
+
+    & li {
+      cursor: pointer;
+      & a {
+        font-weight: 700;
+        padding: 0 1rem;
+        color: var(--text);
+        transition: all 0.3s;
+        &:hover {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+  & .active {
+    color: var(--primary);
+  }
+}

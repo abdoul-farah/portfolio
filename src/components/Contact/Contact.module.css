@@ -1,0 +1,112 @@
+.section {
+  height: 100vh;
+  padding: 100px 0;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.contact {
+  flex: 1;
+  & h1 {
+    font-size: var(--font-size-xl);
+    padding-bottom: 1rem;
+  }
+
+  & .contactItem {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    & svg {
+      padding: 0;
+    }
+    & .icon {
+      color: var(--primary);
+      font-size: 70px;
+      padding: -10px;
+
+      max-width: 100%;
+    }
+    & a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+}
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  & > * {
+    margin-bottom: 0.5rem;
+  }
+
+  & h1 {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  & input,
+  & textarea,
+  & button {
+    font-size: var(--font-size-base);
+    padding: 1rem 0.5rem;
+    border-radius: 2px;
+  }
+  & input,
+  & textarea {
+    /* background-color: var(--secondary); */
+    border: none;
+    outline: 1px solid var(--secondary);
+    box-sizing: border-box;
+  }
+  & input:hover,
+  & input:focus,
+  & textarea:hover,
+  & textarea:focus {
+    outline: 2px solid var(--primary);
+    background-color: fade(var(--secondary), 10%);
+  }
+
+  & button {
+    background-color: var(--primary);
+    border: none;
+    color: var(--background);
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: var(--accent);
+      /* box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .section {
+    flex-direction: column;
+  }
+  .contact,
+  .form {
+    flex-grow: 0;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    & .contactItem {
+      padding: 0;
+    }
+  }
+}

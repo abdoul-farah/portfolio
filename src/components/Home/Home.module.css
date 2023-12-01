@@ -1,0 +1,122 @@
+.home {
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.intro {
+  & > * {
+    margin-bottom: 0.5rem;
+  }
+  & h1 {
+    letter-spacing: 0.2rem;
+    font-size: var(--font-size-xxl);
+    & span {
+      display: inline-block;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
+  & .description {
+    font-weight: 400;
+    font-size: var(--font-size-base);
+  }
+
+  & .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: var(--background);
+    background-color: var(--primary);
+    /* background-image: linear-gradient(45deg, var(--secondary), var(--primary)); */
+    border: none;
+    padding: 1rem 0.5rem;
+    margin: 2rem 0;
+    cursor: pointer;
+    border-radius: 0.125rem;
+    font-size: var(--font-size-base);
+    transition: all 0.3s;
+
+    &:hover,
+    &:focus {
+      background-color: var(--accent);
+
+      box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    }
+  }
+
+  & .scroll {
+    width: fit-content;
+    margin-top: 7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    color: var(--primary);
+    &:hover {
+      transform: translateY(5px);
+    }
+
+    & .icon {
+      color: var(--primary);
+    }
+    /* border: 1px solid black; */
+  }
+}
+
+.img {
+  width: 40%;
+  & .avatar {
+    width: 400px;
+    height: 400px;
+    margin: 10px auto;
+    object-fit: cover;
+
+    box-shadow: 0 3px 3px 3px var(--secondary);
+    animation: animate 5s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+
+    /* background-image: linear-gradient(
+      to right,
+      var(--primary),
+      var(--secondary)
+    ); */
+  }
+}
+@keyframes animate {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+@media (max-width: 1000px) {
+  .home {
+    height: auto;
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro .hi5 {
+    display: block;
+  }
+  .intro .scroll {
+    display: none;
+  }
+
+  .img {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
